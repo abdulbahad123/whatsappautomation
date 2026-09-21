@@ -148,12 +148,14 @@
 }
 
 .nav-item.active {
-  background: var(--primary-soft);
-  color: var(--primary-text);
+  background: linear-gradient(90deg, rgba(16, 185, 129, 0.2) 0%, rgba(16, 185, 129, 0.08) 100%);
+  color: #34d399;
+  border-left: 3px solid #10b981;
+  font-weight: 600;
 }
 
 .nav-item.active svg {
-  color: var(--primary-text);
+  color: #34d399;
 }
 
 .sidebar-footer {

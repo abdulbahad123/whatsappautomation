@@ -99,8 +99,9 @@
 }
 
 .infrastructure-page .radio-option.selected {
-  border-color: var(--primary);
-  background: rgba(37, 211, 102, 0.05);
+  border-color: #10b981;
+  background: rgba(16, 185, 129, 0.12);
+  box-shadow: 0 0 16px rgba(16, 185, 129, 0.25);
 }
 
 .infrastructure-page .radio-option input {

@@ -6,7 +6,7 @@
     }
   },
   "common": {
-    "appName": "OpenWA",
+    "appName": "WhatsApp API",
     "loading": "Loading...",
     "cancel": "Cancel",
     "delete": "Delete",
@@ -188,7 +188,7 @@
     "connectionError": "Unable to connect to server. Please try again.",
     "help": "Need help?",
     "viewDocs": "View Documentation",
-    "footer": "Made with ❤️ by Yudhi Armyndharis and the OpenWA Community",
+    "footer": "WhatsApp API Gateway",
     "version": "v{{version}} · {{date}}"
   },
   "dashboard": {
