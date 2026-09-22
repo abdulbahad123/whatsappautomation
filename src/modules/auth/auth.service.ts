@@ -97,6 +97,16 @@ export class AuthService implements OnModuleInit, OnModuleDestroy {
         this.logger.warn('Could not save API key file', { error: String(err) });
       }
     } else {
+      // If API_MASTER_KEY is set in environment, ensure it exists in the database
+      if (process.env.API_MASTER_KEY) {
+        const masterKey = process.env.API_MASTER_KEY.trim();
+        const masterHash = this.hashKey(masterKey);
+        const existingMaster = await this.apiKeyRepository.findOne({ where: { keyHash: masterHash } });
+        if (!existingMaster) {
+          await this.seedApiKey(masterKey, 'Environment Master Admin Key', ApiKeyRole.ADMIN);
+          this.logger.log('Seeded API_MASTER_KEY from environment to database');
+        }
+      }
       // Read the saved bootstrap key from the file — but only while it still resolves to a LIVE
       // key; a revoked/rotated/deleted key must not be advertised in the banner.
       displayKey = (await this.readLiveBootstrapKey()) ?? '(check dashboard for keys)';
